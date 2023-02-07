@@ -1,7 +1,7 @@
 // Servidor de Express
 const express = require('express');
 const http = require('http');
-const socketio = require('socket.io');
+const socketIO = require('socket.io');
 const path = require('path');
 const Sockets = require('./sockets');
 const cors = require('cors');
@@ -15,7 +15,7 @@ class Server {
         this.server = http.createServer(this.app);
 
         // Configuraciones de sockets
-        this.io = socketio(this.server, { cors: {
+        this.io = socketIO(this.server, { cors: {
             origin: "*",
             methods: ["GET", "POST"]
         }});
